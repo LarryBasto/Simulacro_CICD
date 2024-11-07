@@ -31,3 +31,12 @@ jobs:
 
       - name: Run tests
         run: python -m pytest test_Hola.py  # Ejecutar el archivo de pruebas test_Hola.py
+
+      - name: Run performance tests
+        run: |
+          echo "Ejecutando pruebas de rendimiento..."  
+
+      - name: Deploy to Production
+        if: success()  # Solo si las pruebas anteriores pasan
+        run: |
+          echo "Desplegando a producción..."  
