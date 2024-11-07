@@ -22,4 +22,7 @@ jobs:
           python-version: '3.x'  # Usar la versión de Python que necesitas
 
       - name: Run Python script
-        run: python Hola.py  # Ejecutar el archivo hola.py
+        run: python Hola.py  # Ejecutar el archivo Hola.py para verificar su salida
+
+      - name: Run tests
+        run: python -m pytest test_Hola.py  # Ejecutar pruebas unitarias con pytest
