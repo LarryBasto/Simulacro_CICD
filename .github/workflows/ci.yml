@@ -1,40 +1,29 @@
 name: CI Pipeline
 
-# Esto especifica cuándo debe ejecutarse el flujo de trabajo
 on:
   push:
     branches:
-      - main  # Esto ejecutará el flujo cuando se haga un push a la rama main
+      - main
   pull_request:
     branches:
-      - main  # También ejecutará el flujo cuando se haga un pull request hacia main
+      - main
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # Esto indica que se ejecutará en un contenedor de Ubuntu
+    runs-on: ubuntu-latest
 
     steps:
-      # Paso 1: Extraer el código del repositorio
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      # Paso 2: Configurar Python
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: '3.x'  # Establece la versión de Python que deseas usar
+          python-version: '3.x'
 
-      # Paso 3: Instalar dependencias (si tienes alguna)
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt  # Si tienes un archivo de dependencias, instálalas
-
-      # Paso 4: Ejecutar el script python
       - name: Run Python script
-        run: python Hola.py
+        run: python hola.py
 
-      # Paso 5: Ejecutar pruebas unitarias (si tienes)
       - name: Run tests
         run: |
-          python -m unittest discover  # Esto ejecuta todas las pruebas unitarias en tu proyecto
+          python -m unittest discover
