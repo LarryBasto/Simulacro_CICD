@@ -21,8 +21,13 @@ jobs:
         with:
           python-version: '3.x'  # Usar la versión de Python que necesitas
 
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install pytest  # Instalar pytest para ejecutar pruebas
+
       - name: Run Python script
-        run: python Hola.py  # Ejecutar el archivo Hola.py para verificar su salida
+        run: python Hola.py  # Ejecutar el archivo Hola.py
 
       - name: Run tests
-        run: python -m pytest test_Hola.py  # Ejecutar pruebas unitarias con pytest
+        run: python -m pytest test_Hola.py  # Ejecutar el archivo de pruebas test_Hola.py
