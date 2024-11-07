@@ -32,7 +32,7 @@ jobs:
       - name: Run tests
         run: python -m pytest test_Hola.py
 
-      # Etapa de Monitoreo en Producción
+      # Etapa de Monitoreo en Producción chipi
       - name: Monitor Production Metrics
         run: |
           echo "Iniciando monitoreo de producción..."
