@@ -22,7 +22,7 @@ jobs:
           python-version: '3.x'
 
       - name: Run Python script
-        run: python Hola.py
+        run: python hola.py
 
       - name: Run tests
         run: |
